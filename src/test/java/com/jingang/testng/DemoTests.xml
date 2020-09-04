@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" parallel="classes" thread-count="1">
+
+    <test verbose="1" preserve-order="true" name="SequenceTest">
+        <!--
+            在不指定group时，会执行所有测试方法。
+                    verbose  ： 控制台输出的详细内容等级,0-10级（0无，10最详细）
+                    preserve-order ：是否按照排序执行 默认为true
+                    name ： 必选项，<suite>的名字，将出现在reports里
+                    更多详细参数 请参考：
+                        https://blog.csdn.net/u011138533/article/details/52174446
+         -->
+
+        <classes>
+            <!-- 可以多个 -->
+            <class name="com.jingang.testng.DemoTests" />
+        </classes>
+    </test>
+
+</suite>

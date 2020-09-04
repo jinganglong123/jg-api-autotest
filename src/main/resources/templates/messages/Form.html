@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Data</title>
+</head>
+<body>
+<div class="container">
+    <form action="" method="post" id="form">
+        <input type="hidden" name="jrgw-request-time" id="jrgw-request-time" value=""/>
+        <input type="hidden" name="jrgw-user-id-type" value="0"/>
+        <input type="hidden" name="gw-encrypt-type" value="RSA"/>
+        <input type="hidden" name="gw-sign-type" value="MD5_RSA"/>
+        <input type="hidden" name="encrypt" id="encrypt" value=""/>
+        <input type="hidden" name="gw-sign" id="gw-sign" value=""/>
+        <input type="hidden" readonly="readonly"  name="jrgw-enterprise-user-id" id="jrgw-enterprise-user-id" value=""/><br>
+    </form>
+</div>
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+
+<script type="text/javascript">
+    $.ajax({
+        async: true,
+        crossDomain: true,
+        data:$('#form').serialize(),
+        url: "/getData",
+        success: function(json) {
+        //网关提供的对外地址
+         $("#form").attr("action", "http://10.222.9.74:8095/hapi/v1/test_url/addhapi");
+            $("#encrypt").val(json.encrypt);
+            $("#gw-sign").val(json.sign);
+            $("#jrgw-request-time").val(json.time);
+            $("#jrgw-enterprise-user-id").val(json.userId);
+            $("#form").submit();
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+        alert(jqXHR.responseText);
+        alert(textStatus);
+        alert(errorThrown);
+        }
+    });
+</script>
+</body>
+</html>

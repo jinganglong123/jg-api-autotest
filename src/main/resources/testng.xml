@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="galaxyApiSuite" parallel="false" thread-count="1" preserve-order="true">
+    <!--
+        在不指定group时，会执行所有测试方法。
+                verbose  ： 控制台输出的详细内容等级,0-10级（0无，10最详细）
+                preserve-order ：是否按照testng.xml中的既定用例顺序执行 默认为true
+                name ： 必选项，<suite>的名字，将出现在reports里
+                更多详细参数 请参考：
+                    https://blog.csdn.net/u011138533/article/details/52174446
+     -->
+
+    <!--以class为基本点-->
+
+    <test verbose="10" preserve-order="true" name="openApiTest" parallel="methods">
+        <classes>
+            <!-- 可以多个 -->
+            <class name="com.jingang.springinterfacetest.cases.demoCaseModule.Demo" />
+            <!--<class name="com.jingang.springinterfacetest.cases.loginModule.CreateRandomImage" />-->
+            <!--<class name="com.jingang.springinterfacetest.cases.loginModule.UserLogout" />-->
+
+            <!--<class name="com.jingang.springinterfacetest.cases.applicationModule.ABusinessFlowDemo" />-->
+            <!--<class name="com.jingang.springinterfacetest.cases.applicationModule.Create" />-->
+            <!--<class name="com.jingang.springinterfacetest.cases.applicationModule.Delete" />-->
+            <!--<class name="com.jingang.springinterfacetest.cases.applicationModule.QueryByPage" />-->
+            <!--<class name="com.jingang.springinterfacetest.cases.applicationModule.QueryLobList" />-->
+            <!--<class name="com.jingang.springinterfacetest.cases.applicationModule.Update" />-->
+            <!--<class name="com.jingang.springinterfacetest.cases.applicationModule.Users" />-->
+        </classes>
+    </test>
+
+    <!--以package为基本点-->
+
+    <!--<test verbose="10" name="galaxyApiTest" parallel="false">-->
+
+        <!--<packages>-->
+            <!--<package name="com.jingang.springinterfacetest.cases.loginModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.applicationModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.applicationServiceModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.InstanceListModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.domainModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.logModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.workOrderModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.MonitorModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.accessKeyModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.configModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.imageCenter" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.commonModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.MessageModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.backCenter" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.middlewareModule" />-->
+            <!--<package name="com.jingang.springinterfacetest.cases.externalIngerfaceModule" />-->
+
+        <!--</packages>-->
+    <!--</test>-->
+
+    <!--以groups为基本点-->
+    <!--<test verbose="10" preserve-order="true" name="galaxyApiTest" parallel="methods">-->
+        <!--<groups>-->
+            <!--&lt;!&ndash; 可以多个 &ndash;&gt;-->
+            <!--<run>-->
+                <!--<include name="TestDedicated" />-->
+                <!---->
+            <!--</run>-->
+
+        <!--</groups>-->
+    <!--</test>-->
+
+    <!--添加测试报告的监听-->
+    <listeners>
+<!--        生成测试包需要开启的监听-->
+        <listener class-name="com.jingang.springinterfacetest.config.ExtentTestNGIReporterListener" />
+<!--        发送通知需要开启的监听-->
+<!--        <listener class-name="com.jingang.springinterfacetest.config.JGTestNgListener" />-->
+    </listeners>
+
+
+</suite>

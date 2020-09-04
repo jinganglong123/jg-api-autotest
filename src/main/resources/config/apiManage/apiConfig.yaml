@@ -1,0 +1,131 @@
+reqMethod: POST
+protocolType: HTTP
+resCodeNamespace: test_url
+uriNamespace: test_url
+uriPath: 123456qwer
+apiName: "测试API"
+protectFlag: 0
+apiDesc: "API描述"
+transpondFlag: 0
+projectCode: "733f7c5b1ee0446f937675954315a225"
+categoryCode: api
+resParamType: json
+resJsonRoot: object
+serviceLocation: " "
+#samples:
+#  req: null
+#  res: null
+#  msg: null
+params:
+  reqHeader:
+    - paramCode: ${random.uuid}
+      parentCode: "0"
+      parentLocation: "request.header"
+      paramSeq: 1
+      paramName: "1"
+      paramCnName: "1"
+      paramType: "1"
+      paramDesc: "1"
+      paramPublic: "1"
+      paramRequired: "1"
+      regularExpression: "1"
+    - paramCode: ${random.uuid}
+      parentCode: "0"
+      parentLocation: "request.header"
+      paramSeq: 1
+      paramName: "1"
+      paramCnName: "1"
+      paramType: "1"
+      paramDesc: "1"
+      paramPublic: "1"
+      paramRequired: "1"
+      regularExpression: "1"
+  resHeader:
+    - paramCode: ${random.uuid}
+      parentCode: "0"
+      parentLocation: "response.header"
+      paramSeq: 1
+      paramName: "1"
+      paramCnName: "1"
+      paramType: "1"
+      paramDesc: "1"
+      paramPublic: "1"
+      paramRequired: "1"
+      regularExpression: "1"
+    - paramCode: ${random.uuid}
+      parentCode: "0"
+      parentLocation: "response.header"
+      paramSeq: 1
+      paramName: "1"
+      paramCnName: "1"
+      paramType: "1"
+      paramDesc: "1"
+      paramPublic: "1"
+      paramRequired: "1"
+      regularExpression: "1"
+  reqArgs:
+    - "paramCode": &req1ParentCode ${random.uuid}
+      "parentCode": "0"
+      "parentLocation": "request.body"
+      "paramSeq": 0
+      "paramName": "req1"
+      "paramType": "object"
+      "paramDesc": ""
+      "paramPublic": 0
+      "paramRequired": 1
+      "maxLength": 0
+      "className": ""
+      "paramMultiple": 1
+      "defaultValue": ""
+      "mockValue": ""
+      "regularExpression": ""
+      "fields":
+        - "paramCode": ${random.uuid}
+          "parentCode":
+          "parentLocation": "request.body.req1"
+          "paramSeq": 0
+          "paramName": "req11"
+          "paramType": "string"
+          "paramDesc": ""
+          "paramPublic": 0
+          "paramRequired": 1
+          "maxLength": 0
+          "className": ""
+          "paramMultiple": 1
+          "defaultValue": ""
+          "mockValue": ""
+          "regularExpression": ""
+    - "paramCode": &req1ParentCode ${random.uuid}
+      "parentCode": "0"
+      "parentLocation": "request.body"
+      "paramSeq": 0
+      "paramName": "req2"
+      "paramType": "object"
+      "paramDesc": ""
+      "paramPublic": 0
+      "paramRequired": 1
+      "maxLength": 0
+      "className": ""
+      "paramMultiple": 1
+      "defaultValue": ""
+      "mockValue": ""
+      "regularExpression": ""
+      "fields":
+        - "paramCode": ${random.uuid}
+          "parentCode":
+          "parentLocation": "request.body.req2"
+          "paramSeq": 0
+          "paramName": "req11"
+          "paramType": "string"
+          "paramDesc": ""
+          "paramPublic": 0
+          "paramRequired": 1
+          "maxLength": 0
+          "className": ""
+          "paramMultiple": 1
+          "defaultValue": ""
+          "mockValue": ""
+          "regularExpression": ""
+#  resArgs:
+  reqPath:
+#  resQuery:

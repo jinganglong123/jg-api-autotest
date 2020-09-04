@@ -1,0 +1,14 @@
+reqMethod: POST
+protocolType: HTTP
+resCodeNamespace: test_url
+uriNamespace: test_url
+uriPath: 123456qwer
+apiName: "测试API"
+protectFlag: 0
+apiDesc: "API描述"
+transpondFlag: 0
+projectCode: "733f7c5b1ee0446f937675954315a225"
+categoryCode: api
+resParamType: json
+resJsonRoot: object
+serviceLocation: " "

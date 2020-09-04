@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jingang.springinterfacetest.common.GetTestData">
+    <!--获取登录接口case-->
+    <select id="getRandomOneUser" parameterType="Integer" resultType="com.jingang.springinterfacetest.model.User">
+        SELECT id,username,password,email,real_name,enable FROM t_user
+        where enable=#{enable}
+        order by rand() limit 1;
+
+    </select>
+
+    <!--&lt;!&ndash;添加用户接口case&ndash;&gt;-->
+    <!--<select id="addUserCase" parameterType="Integer" resultType="com.course.model.AddUserCase">-->
+        <!--select * from addUserCase where id=#{id};-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;获取用户信息case&ndash;&gt;-->
+    <!--<select id="getUserInfoCase" parameterType="Integer" resultType="com.course.model.GetUserInfoCase">-->
+        <!--select * from getUserInfoCase where id=#{id};-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;获取用户列表case&ndash;&gt;-->
+    <!--<select id="getUserListCase" parameterType="Integer" resultType="com.course.model.GetUserListCase">-->
+        <!--select * from getUserListCase where id = #{id};-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;更新/删除用户case&ndash;&gt;-->
+    <!--<select id="updateUserInfoCase" parameterType="Integer" resultType="com.course.model.UpdateUserInfoCase">-->
+        <!--select * from updateUserInfoCase where id = #{id};-->
+    <!--</select>-->
+</mapper>
